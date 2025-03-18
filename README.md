@@ -15,7 +15,7 @@ Web Design Time Machine is an interactive journey through the evolution of web d
 
 ## Technologies Used
 - **HTML5**
-- **CSS3/SASS**
+- **CSS3**
 - **JavaScript**
 
 ## Getting Started
