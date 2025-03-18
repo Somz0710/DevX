@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>1980s Information Display</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #00FF00;
+      font-family: "Courier New", monospace;
+      margin: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #00FF00;
+    }
+    .terminal {
+      border: 2px solid #00FF00;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .blink {
+      animation: blink-animation 1s steps(5, start) infinite;
+    }
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+    .command {
+      margin-bottom: 10px;
+    }
+    .prompt::before {
+      content: "C:\\>";
+      margin-right: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #00FF00;
+      padding: 5px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>1980s Information Display</h1>
+  <div class="terminal">
+    <p class="prompt command">DIR</p>
+    <p>
+      Volume in drive C has no label.<br/>
+      Directory of C:\DATA
+    </p>
+    <table>
+      <tr>
+        <th>Filename</th>
+        <th>Size</th>
+        <th>Date</th>
+      </tr>
+      <tr>
+        <td>SALES.DAT</td>
+        <td>12,400 bytes</td>
+        <td>03-15-1985</td>
+      </tr>
+      <tr>
+        <td>REPORT.TXT</td>
+        <td>2,508 bytes</td>
+        <td>02-21-1985</td>
+      </tr>
+      <tr>
+        <td>LOTUS123.WK1</td>
+        <td>18,432 bytes</td>
+        <td>03-10-1985</td>
+      </tr>
+    </table>
+    <p class="prompt command">TYPE SUMMARY.TXT</p>
+    <p>
+      QUARTERLY SALES SUMMARY - Q1 1985<br/><br/>
+      REGION 1: $145,230.00<br/>
+      REGION 2: $203,455.00<br/>
+      REGION 3: $198,120.00<br/>
+      REGION 4: $167,890.00<br/><br/>
+      TOTAL: $714,695.00
+    </p>
+    <p class="prompt command"><span class="blink">_</span></p>
+  </div>
+  <div style="text-align: center; margin-top: 20px;">
+    <p>Characteristic elements: Command-line interface, monochrome green text, ASCII graphics</p>
+    <p>Popular tools: dBase, Lotus 1-2-3, WordStar, VisiCalc</p>
+  </div>
+
+  
+      
+      <style>
+          @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
+          .btn-80s {
+              font-family: 'Press Start 2P', cursive;
+              font-size: 14px;
+              color: #ff00ff;
+              background: black;
+              border: 3px solid #ff00ff;
+              padding: 15px 30px;
+              text-transform: uppercase;
+              text-shadow: 2px 2px 4px #00ffff;
+              cursor: pointer;
+              box-shadow: 0px 0px 10px #ff00ff;
+          }
+  
+          .btn-80s:hover {
+              background: #ff00ff;
+              color: black;
+              text-shadow: 2px 2px 4px #000;
+          }
+      </style>
+  
+      <button class="btn-80s" ><a href="index.html">HOME</a></button>
+  
+  </html>
+  
+
+
+
+
+
+  
+</body>
+</html>

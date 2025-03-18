@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2010s Information Display</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      max-width: 1170px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .navbar {
+      background-color: #2196F3;
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .nav-menu {
+      display: flex;
+    }
+    .nav-item {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    .main-content {
+      margin-top: 80px;
+      padding: 20px 0;
+    }
+    .card {
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      background-color: #f9f9f9;
+    }
+    .card-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #0d8bf2;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: #2196F3;
+      border: 1px solid #2196F3;
+    }
+    .btn-outline:hover {
+      background-color: #2196F3;
+      color: white;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 7px;
+      font-size: 12px;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+    }
+    .badge-warning {
+      background-color: #FFC107;
+    }
+    .badge-danger {
+      background-color: #F44336;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+    .col {
+      flex: 1;
+      padding: 0 15px;
+    }
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      border-left: 5px solid #2196F3;
+      background-color: #E3F2FD;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .table th, .table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .table th {
+      font-weight: 500;
+      background-color: #f5f5f5;
+    }
+    .progress {
+      height: 8px;
+      background-color: #e9ecef;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: #2196F3;
+      border-radius: 4px;
+    }
+    .text-success {
+      color: #4CAF50;
+    }
+    .text-danger {
+      color: #F44336;
+    }
+    .text-warning {
+      color: #FFC107;
+    }
+    .chart-container {
+      height: 300px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #eee;
+    }
+    .footer {
+      background-color: #333;
+      color: #aaa;
+      padding: 30px 0;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .row { flex-direction: column; }
+      .col { flex: none; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="container navbar-container">
+      <div class="brand">SalesDash</div>
+      <div class="nav-menu">
+        <div class="nav-item">Dashboard</div>
+        <div class="nav-item">Reports</div>
+        <div class="nav-item">Analytics</div>
+        <div class="nav-item">Settings</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="main-content">
+    <div class="container">
+      <div class="alert">
+        Welcome to the new SalesDash platform! We've updated our UI for improved mobile responsiveness and better data visualization. Check out the new features!
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Q3 2015 Performance</h3>
+            </div>
+            <div class="card-body">
+              <div class="chart-container">
+                <img src="/api/placeholder/350/200" alt="Responsive sales dashboard chart">
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h4>Total Revenue</h4>
+                  <p style="font-size: 24px; font-weight: 500;">$4.35M</p>
+                  <p><span class="text-success">↑ 12.3%</span> from previous quarter</p>
+                </div>
+                <div class="col">
+                  <h4>Conversion Rate</h4>
+                  <p style="font-size: 24px; font-weight: 500;">3.8%</p>
+                  <p><span class="text-warning">↑ 0.2%</span> from previous quarter</p>
+                </div>
+                <div class="col">
+                  <h4>Avg. Order Value</h4>
+                  <p style="font-size: 24px; font-weight: 500;">$127</p>
+                  <p><span class="text-danger">↓ 3.1%</span> from previous quarter</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Product Category Performance</h3>
+            </div>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Revenue</th>
+                    <th>% of Total</th>
+                    <th>Growth</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smartphones</td>
+                    <td>$1.42M</td>
+                    <td>32.6%</td>
+                    <td><span class="text-success">+18.5%</span></td>
+                    <td><span class="badge">On Target</span></td>
+                  </tr>
+                  <tr>
+                    <td>Tablets</td>
+                    <td>$0.87M</td>
+                    <td>20.0%</td>
+                    <td><span class="text-warning">+2.1%</span></td>
+                    <td><span class="badge badge-warning">Below Target</span></td>
+                  </tr>
+                  <tr>
+                    <td>Laptops</td>
+                    <td>$1.21M</td>
+                    <td>27.8%</td>
+                    <td><span class="text-success">+9.3%</span></td>
+                    <td><span class="badge">On Target</span></td>
+                  </tr>
+                  <tr>
+                    <td>Accessories</td>
+                    <td>$0.85M</td>
+                    <td>19.6%</td>
+                    <td><span class="text-danger">-5.2%</span></td>
+                    <td><span class="badge badge-danger">Needs Attention</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Regional Performance</h3>
+            </div>
+            <div class="card-body">
+              <div>
+                <p><strong>North America</strong> - $1.92M</p>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 44%"></div>
+                </div>
+              </div>
+              <div>
+                <p><strong>Europe</strong> - $1.23M</p>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 28%"></div>
+                </div>
+              </div>
+              <div>
+                <p><strong>Asia Pacific</strong> - $0.87M</p>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 20%"></div>
+                </div>
+              </div>
+              <div>
+                <p><strong>Latin America</strong> - $0.33M</p>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 8%"></div>
+                </div>
+              </div>
+              
+              <div style="margin-top: 20px;">
+                <h4>Key Insights</h4>
+                <ul>
+                  <li>North America leads in smartphone sales</li>
+                  <li>Europe shows strongest growth in laptops</li>
+                  <li>Asia Pacific tablet market expanding rapidly</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Actions & Recommendations</h3>
+            </div>
+            <div class="card-body">
+              <p>Based on the current data analysis, here are our system-generated recommendations:</p>
+              <ol>
+                <li>Increase marketing budget for accessories by 15% to address negative growth</li>
+                <li>Expand smartphone product line in North America region</li>
+                <li>Optimize tablet pricing strategy to improve conversion rates</li>
+                <li>Launch loyalty program for repeat customers</li>
+              </ol>
+              <div style="margin-top: 20px;">
+                <a href="#" class="btn">Export</a>
+
+    <style>
+        .btn-2010s {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background: #4CAF50;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-2010s:hover {
+            background: #388E3C;
+        }
+    </style>
+
+    <button class="btn-2010s"><a href="index.html">HOME</a></button>
+</body>
+</html>

@@ -1,0 +1,821 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: all 0.5s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.era-toggle {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.features {
+    margin-bottom: 50px;
+}
+
+h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    padding: 20px;
+    flex: 1 1 300px;
+    max-width: 350px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    transition: all 0.5s ease;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+  }
+  
+  .era-toggle {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .features {
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    padding: 20px;
+    flex: 1 1 300px;
+    max-width: 350px;
+  }
+  
+  .card h3 {
+    margin-bottom: 15px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Modern style - combines elements from the modern section in homepage2.html */
+  .app.modern {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .modern .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modern header {
+    border-bottom: 1px solid #333333;
+  }
+  
+  .modern .logo {
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 28px;
+  }
+  
+  .modern .era-toggle {
+    background-color: #121212;
+    border: 1px solid #555555;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+  
+  .modern .hero {
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .modern h1 {
+    font-size: 48px;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+  }
+  
+  .modern p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #aaaaaa;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .modern .cta-button {
+    background-color: transparent;
+    color: gray;
+    border: 1px solid aliceblue;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 40px;
+  }
+  
+  .modern .cta-button:hover {
+    background: linear-gradient(to right, rgb(0, 153, 255), rgb(0, 204, 255));
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(0, 183, 255, 0.7));
+    color: white;
+  }
+  
+  .modern .features {
+    padding-top: 40px;
+    position: relative;
+  }
+  
+  .modern h2 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    color: rgba(228, 217, 217, 0.8);
+    letter-spacing: 2px;
+  }
+  
+  .modern .cards {
+    gap: 30px;
+  }
+  
+  .modern .card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .modern .card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .modern .card h3 {
+    color: rgba(228, 217, 217, 0.8);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .modern .card p {
+    color: rgba(228, 217, 217, 0.5);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .modern footer {
+    background-color: transparent;
+    color: rgba(228, 217, 217, 0.4);
+    padding: 30px 0;
+    margin-top: auto;
+    font-size: 0.8rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .modern h1 {
+      font-size: 2rem;
+    }
+    
+    .modern .hero {
+      padding: 40px 20px;
+    }
+    
+    .modern .cards {
+      flex-direction: column;
+    }
+    
+    .modern .card {
+      max-width: 100%;
+    }
+  }
+/* 2010s - Flat Design Era */
+body.style-2010s {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+}
+
+.style-2010s header {
+    border-bottom: 1px solid #bdc3c7;
+    padding: 15px 0;
+}
+
+.style-2010s .logo {
+    color: #3498db;
+    font-weight: 700;
+}
+
+.style-2010s .era-toggle {
+    background-color: #ffffff;
+    border: 1px solid #bdc3c7;
+    color: #2c3e50;
+    border-radius: 3px;
+}
+
+.style-2010s .hero {
+    padding: 60px 20px;
+    background-color: #3498db;
+    color: white;
+    margin: 0 -20px 40px -20px;
+}
+
+.style-2010s h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    text-shadow: none;
+}
+
+.style-2010s .hero p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    font-size: 18px;
+}
+
+.style-2010s .cta-button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    padding: 12px 25px;
+}
+
+.style-2010s .cta-button:hover {
+    background-color: #27ae60;
+}
+
+.style-2010s h2 {
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.style-2010s .card {
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    padding: 0;
+}
+
+.style-2010s .card h3 {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.style-2010s .card p {
+    padding: 20px;
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+.style-2010s footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    margin: 0 -20px -20px -20px;
+}
+
+/* 2000s - Web 2.0 Glossy Era */
+body.style-2000s {
+    background-color: #f5f5f5;
+    color: #333333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.style-2000s header {
+    background: linear-gradient(to bottom, #4b6cb7, #182848);
+    padding: 15px 20px;
+    margin: -20px -20px 30px -20px;
+    border-bottom: 5px solid #ff9900;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.style-2000s .logo {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.style-2000s .era-toggle {
+    background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    border: 2px solid #cccccc;
+    color: #333333;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.style-2000s .hero {
+    background: linear-gradient(to bottom, #e6e6e6, #ffffff);
+    padding: 30px 20px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.style-2000s h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #003366;
+    text-shadow: 1px 1px 1px #ffffff;
+}
+
+.style-2000s p {
+    color: #555555;
+    line-height: 1.6;
+}
+
+.style-2000s .cta-button {
+    background: linear-gradient(to bottom, #ff9900, #ff6600);
+    color: white;
+    border: 1px solid #cc6600;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.style-2000s .cta-button:hover {
+    background: linear-gradient(to bottom, #ffaa33, #ff9900);
+}
+
+.style-2000s h2 {
+    color: #003366;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px #ffffff;
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.style-2000s .cards {
+    gap: 20px;
+}
+
+.style-2000s .card {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    overflow: hidden;
+}
+
+.style-2000s .card h3 {
+    background: linear-gradient(to bottom, #4b6cb7, #182848);
+    color: white;
+    padding: 10px 15px;
+    margin: 0;
+    text-shadow: 1px 1px 1px #000000;
+    border-bottom: 3px solid #ff9900;
+}
+
+.style-2000s .card p {
+    padding: 15px;
+}
+
+.style-2000s footer {
+    background: linear-gradient(to bottom, #182848, #4b6cb7);
+    color: #ffffff;
+    padding: 20px 0;
+    margin: 30px -20px -20px -20px;
+    border-top: 5px solid #ff9900;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+/* 1990s - Early Web - Updated with reference images */
+body.style-1990s {
+    background-color: #006699;
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('/api/placeholder/100/100');
+    background-repeat: repeat;
+}
+
+.style-1990s .container {
+    background-color: #ffffff;
+    border: 8px ridge #c0c0c0;
+    max-width: 800px; /* Narrower width like 90s sites */
+}
+
+.style-1990s header {
+    background-color: #000080;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 15px;
+    margin: -20px -20px 20px -20px;
+}
+
+.style-1990s .logo {
+    color: #ffffff;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    text-shadow: 2px 2px 0px #000000;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.style-1990s .era-toggle {
+    background-color: #d3d3d3;
+    border: 3px outset #a9a9a9;
+    color: #000000;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.style-1990s .hero {
+    text-align: center;
+    background-color: #ffffff;
+    border: 3px groove #c0c0c0;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.style-1990s h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #cc0000;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    text-transform: uppercase;
+}
+
+.style-1990s p {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    text-align: justify;
+    color: #333333;
+}
+
+.style-1990s .cta-button {
+    background-color: #ff9900;
+    color: #000000;
+    border: 5px outset #cc7a00;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.style-1990s .cta-button:active {
+    border-style: inset;
+}
+
+.style-1990s h2 {
+    color: #000080;
+    font-size: 24px;
+    text-align: center;
+    background-color: #cccccc;
+    padding: 8px;
+    border: 2px outset #a9a9a9;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.style-1990s .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.style-1990s .card {
+    width: 90%;
+    background-color: #f0f0f0;
+    border: 3px outset #c0c0c0;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.style-1990s .card h3 {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    background-color: #000080;
+    margin: 0;
+    padding: 8px;
+    border-bottom: 3px outset #c0c0c0;
+}
+
+.style-1990s .card p {
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    padding: 15px;
+    text-align: left;
+}
+
+.style-1990s footer {
+    background-color: #000080;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border-top: 3px outset #c0c0c0;
+    margin: 20px -20px -20px -20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+/* Authentic 90s navigation */
+.style-1990s .navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.style-1990s .navigation a {
+    display: inline-block;
+    background-color: #d3d3d3;
+    color: #000080;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 0 5px;
+    border: 2px outset #a9a9a9;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.style-1990s .navigation a:active {
+    border-style: inset;
+}
+
+/* Adds animated "Under Construction" gif style */
+.style-1990s .under-construction {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #cc0000;
+    border: 2px dashed #cc0000;
+    padding: 10px;
+    background-color: #ffff99;
+    animation: blink 1s infinite;
+    font-size: 18px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Hit counter style */
+.style-1990s .hit-counter {
+    text-align: center;
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.style-1990s .counter {
+    background-color: #000000;
+    color: #00ff00;
+    padding: 3px 5px;
+    border: 1px inset #666666;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Horizontal rule styling */
+.style-1990s hr {
+    height: 2px;
+    background: linear-gradient(to right, #ffffff, #000080, #ffffff);
+    border: none;
+    margin: 20px 0;
+}
+/* 1980s */
+body.style-1980s {
+    background-color: #000000;
+    color: #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.style-1980s .container {
+    border: 2px solid #33ff33;
+    margin-top: 20px;
+    background-color: #000033;
+    padding: 10px;
+}
+
+.style-1980s header {
+    border-bottom: 2px solid #33ff33;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.style-1980s .logo {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #ff00ff;
+}
+
+.style-1980s .era-toggle {
+    background-color: #000033;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.style-1980s .hero {
+    text-align: center;
+    border: 1px dashed #33ff33;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #000055;
+}
+
+.style-1980s h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 0px #ff00ff;
+}
+
+.style-1980s p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.style-1980s .cta-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ff00ff;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 3px 3px 0px #33ff33;
+}
+
+.style-1980s .cta-button:hover {
+    background-color: #ff00ff;
+    color: #000000;
+}
+
+.style-1980s .features {
+    border-top: 1px dashed #33ff33;
+    padding-top: 20px;
+}
+
+.style-1980s h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #ff00ff;
+}
+
+.style-1980s .cards {
+    display: block;
+}
+
+.style-1980s .card {
+    border: 1px solid #33ff33;
+    margin-bottom: 15px;
+    background-color: #000055;
+    padding: 15px;
+}
+
+.style-1980s .card h3 {
+    color: #ffff33;
+    border-bottom: 1px solid #33ff33;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.style-1980s footer {
+    border-top: 2px solid #33ff33;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 10px 0;
+}

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Information Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgba(228, 217, 217, 0.8);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: rgba(228, 217, 217, 0.7);
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(228, 217, 217, 0.7);
+            line-height: 1.6;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .form-section h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .form-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, rgb(0, 153, 255), rgba(0, 204, 255, 0.3));
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: rgba(228, 217, 217, 0.9);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: rgb(0, 183, 255);
+            box-shadow: 0 0 0 2px rgba(0, 183, 255, 0.2);
+        }
+
+        .form-control::placeholder {
+            color: rgba(228, 217, 217, 0.4);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"] {
+            margin-right: 8px;
+            accent-color: rgb(0, 183, 255);
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: rgb(0, 183, 255);
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, rgb(0, 153, 255), rgb(0, 204, 255));
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(0, 183, 255, 0.7));
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        /* Feedback Table Styles */
+        .feedback-table-container {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow-x: auto;
+        }
+
+        .feedback-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .feedback-table th,
+        .feedback-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feedback-table th {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+        }
+
+        .feedback-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .feedback-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .rating-pill {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+
+        .rating-high {
+            background-color: rgba(39, 174, 96, 0.2);
+            color: rgb(39, 174, 96);
+        }
+
+        .rating-medium {
+            background-color: rgba(241, 196, 15, 0.2);
+            color: rgb(241, 196, 15);
+        }
+
+        .rating-low {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: rgb(231, 76, 60);
+        }
+
+        .empty-feedback-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(228, 217, 217, 0.6);
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        .feedback-counter {
+            background-color: rgba(0, 183, 255, 0.2);
+            color: rgb(0, 183, 255);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        .feedback-animation {
+            animation: highlightRow 2s ease-out;
+        }
+
+        @keyframes highlightRow {
+            0% {
+                background-color: rgba(0, 183, 255, 0.3);
+            }
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(228, 217, 217, 0.4);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .form-container, .feedback-table-container {
+                padding: 20px;
+            }
+
+            .form-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">WebDesign Portal</div>
+            <div class="nav-links">
+                <a href="homepage2.html">Home</a>
+                <a href="#form-section">Feedback Form</a>
+                <a href="#table-section">Recent Feedback</a>
+                <a href="index.html">Time Machine</a>
+            </div>
+        </header>
+
+        <div class="page-header fade-in">
+            <h1>User Feedback & Information</h1>
+            <p>We value your input! Please share your thoughts on our web design portal and help us improve your experience.</p>
+        </div>
+
+        <div class="form-container fade-in" id="form-section">
+            <form id="feedback-form">
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="occupation">Occupation</label>
+                        <input type="text" id="occupation" class="form-control" placeholder="Enter your occupation">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Experience & Feedback</h2>
+                    <div class="form-group">
+                        <label>How would you rate your overall experience?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="rating" value="5"> Excellent
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="rating" value="4"> Very Good
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="rating" value="3"> Good
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="rating" value="2"> Fair
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="rating" value="1"> Poor
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Which features did you explore? (Select all that apply)</label>
+                        <div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="time-machine"> Time Machine
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="design-showcase"> Design Showcase
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="modern-interfaces"> Modern Interfaces
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="other"> Other
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Additional Comments</label>
+                        <textarea id="comments" class="form-control" placeholder="Share your thoughts, suggestions, or experiences"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Design Preferences</h2>
+                    <div class="form-group">
+                        <label for="favorite-era">Which web design era do you find most interesting?</label>
+                        <select id="favorite-era" class="form-control">
+                            <option value="">Select an option</option>
+                            <option value="1980s">1980s - Early Computing</option>
+                            <option value="1990s">1990s - Early Web</option>
+                            <option value="2000s">2000s - Web 2.0</option>
+                            <option value="2010s">2010s - Responsive Design</option>
+                            <option value="current">Current - Modern Minimalism</option>
+                            <option value="future">Future - Emerging Trends</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>What design elements do you value most? (Select up to 3)</label>
+                        <div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="design-elements" value="animations"> Animations & Transitions
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="design-elements" value="color-schemes"> Color Schemes
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="design-elements" value="typography"> Typography
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="design-elements" value="layout"> Layout & Structure
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="design-elements" value="interactivity"> Interactive Elements
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="design-elements" value="accessibility"> Accessibility Features
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="feedback-table-container fade-in" id="table-section">
+            <h2>Recent User Feedback <span id="feedback-count" class="feedback-counter">0</span></h2>
+            <table class="feedback-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Favorite Era</th>
+                        <th>Rating</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody id="feedback-table-body">
+                    <!-- Feedback entries will be added here dynamically -->
+                </tbody>
+            </table>
+            <div id="empty-feedback-message" class="empty-feedback-message">
+                No feedback has been submitted yet. Be the first to share your thoughts!
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Web Design Portal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Check if local storage is available
+        function isLocalStorageAvailable() {
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                return true;
+            } catch(e) {
+                return false;
+            }
+        }
+
+        // Initialize feedback storage
+        let feedbackEntries = [];
+        const storageAvailable = isLocalStorageAvailable();
+        
+        // Load any existing feedback from local storage
+        if (storageAvailable && localStorage.getItem('userFeedback')) {
+            try {
+                feedbackEntries = JSON.parse(localStorage.getItem('userFeedback'));
+                updateFeedbackTable();
+            } catch (e) {
+                console.error('Error loading feedback from storage:', e);
+                feedbackEntries = [];
+            }
+        }
+
+        // Update feedback counter
+        function updateFeedbackCounter() {
+            const counter = document.getElementById('feedback-count');
+            counter.textContent = feedbackEntries.length;
+            
+            // Show/hide empty message
+            const emptyMessage = document.getElementById('empty-feedback-message');
+            if (feedbackEntries.length > 0) {
+                emptyMessage.style.display = 'none';
+            } else {
+                emptyMessage.style.display = 'block';
+            }
+        }
+
+        // Update the feedback table with all entries
+        function updateFeedbackTable() {
+            const tableBody = document.getElementById('feedback-table-body');
+            tableBody.innerHTML = '';
+            
+            // Sort feedback by date (newest first)
+            feedbackEntries.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // Add each feedback entry to the table
+            feedbackEntries.forEach((entry, index) => {
+                const row = document.createElement('tr');
+                if (index === 0) {
+                    row.classList.add('feedback-animation');
+                }
+                
+                let ratingClass = '';
+                if (entry.rating >= 4) {
+                    ratingClass = 'rating-high';
+                } else if (entry.rating == 3) {
+                    ratingClass = 'rating-medium';
+                } else {
+                    ratingClass = 'rating-low';
+                }
+                
+                row.innerHTML = `
+                    <td>${entry.name}</td>
+                    <td>${entry.date}</td>
+                    <td>${entry.era}</td>
+                    <td><span class="rating-pill ${ratingClass}">${entry.ratingText}</span></td>
+                    <td>${entry.comments || 'No comments provided.'}</td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+            
+            // Update the counter
+            updateFeedbackCounter();
+        }
+
+        // Form submission
+        document.getElementById('feedback-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const occupation = document.getElementById('occupation').value;
+            const ratingValue = document.querySelector('input[name="rating"]:checked')?.value || '';
+            const favoriteEra = document.getElementById('favorite-era').value;
+            const comments = document.getElementById('comments').value;
+            
+            // Get features checked
+            const featuresChecked = Array.from(document.querySelectorAll('input[name="features"]:checked'))
+                .map(checkbox => checkbox.value);
+            
+            // Get design elements checked
+            const designElementsChecked = Array.from(document.querySelectorAll('input[name="design-elements"]:checked'))
+                .map(checkbox => checkbox.value);
+            
+            // Get rating text
+            let ratingText = '';
+            switch(ratingValue) {
+                case '5':
+                    ratingText = 'Excellent';
+                    break;
+                case '4':
+                    ratingText = 'Very Good';
+                    break;
+                case '3':
+                    ratingText = 'Good';
+                    break;
+                case '2':
+                    ratingText = 'Fair';
+                    break;
+                case '1':
+                    ratingText = 'Poor';
+                    break;
+                default:
+                    ratingText = 'N/A';
+            }
+            
+            // Get the selected era text
+            const eraSelect = document.getElementById('favorite-era');
+            const eraText = eraSelect.options[eraSelect.selectedIndex]?.text || 'N/A';
+            
+            // Create a new feedback entry
+            const today = new Date();
+            const dateStr = today.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            
+            const newFeedback = {
+                name: name,
+                email: email,
+                occupation: occupation,
+                rating: parseInt(ratingValue),
+                ratingText: ratingText,
+                era: eraText,
+                features: featuresChecked,
+                designElements: designElementsChecked,
+                comments: comments,
+                date: dateStr,
+                timestamp: today.getTime()
+            };
+            
+            // Add the new feedback to our array
+            feedbackEntries.unshift(newFeedback);
+            
+            // Save to local storage if available
+            if (storageAvailable) {
+                localStorage.setItem('userFeedback', JSON.stringify(feedbackEntries));
+            }
+            
+            // Update the table
+            updateFeedbackTable();
+            
+            // Show success message
+            alert(`Thank you, ${name}! Your feedback has been submitted.`);
+            
+            // Reset the form
+            this.reset();
+            
+            // Scroll to the table section
+            document.getElementById('table-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Initialize the table
+        updateFeedbackTable();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Fade-in animation for sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.form-container, .feedback-table-container').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Limit checkbox selection to 3 for design elements
+        const designElements = document.querySelectorAll('input[name="design-elements"]');
+        designElements.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checked = document.querySelectorAll('input[name="design-elements"]:checked');
+                if (checked.length > 3) {
+                    this.checked = false;
+                    alert('Please select up to 3 design elements only.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

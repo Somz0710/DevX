@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>1990s Information Display</title>
+  <style>
+    body {
+      background-color: #C0C0C0;
+      font-family: "Times New Roman", serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      border: 2px outset #808080;
+      padding: 2px;
+    }
+    .title-bar {
+      background-color: #000080;
+      color: white;
+      padding: 3px 5px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+    .window-controls {
+      display: flex;
+    }
+    .control {
+      width: 16px;
+      height: 16px;
+      background-color: #C0C0C0;
+      border: 1px outset #FFFFFF;
+      margin-left: 2px;
+      text-align: center;
+      line-height: 14px;
+      font-size: 12px;
+    }
+    .menu-bar {
+      background-color: #C0C0C0;
+      border-bottom: 1px solid #808080;
+      padding: 3px;
+    }
+    .menu-item {
+      display: inline-block;
+      margin-right: 15px;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    .content {
+      padding: 10px;
+      font-size: 14px;
+    }
+    .status-bar {
+      border-top: 1px solid #808080;
+      background-color: #C0C0C0;
+      padding: 3px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    th {
+      background-color: #000080;
+      color: white;
+      font-weight: bold;
+      text-align: left;
+      padding: 5px;
+    }
+    td {
+      border: 1px solid #808080;
+      padding: 5px;
+    }
+    .image-placeholder {
+      border: 1px solid #000000;
+      background-color: #E0E0E0;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+    }
+    h1 {
+      color: #000080;
+      font-size: 24px;
+    }
+    h2 {
+      color: #800000;
+      font-size: 18px;
+      margin-top: 15px;
+    }
+    .counter {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .button {
+      background-color: #C0C0C0;
+      border: 2px outset #FFFFFF;
+      padding: 3px 8px;
+      text-align: center;
+      display: inline-block;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title-bar">
+      <div>Sales Data - Netscape Navigator</div>
+      <div class="window-controls">
+        <div class="control">_</div>
+        <div class="control">□</div>
+        <div class="control">X</div>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <span class="menu-item">File</span>
+      <span class="menu-item">Edit</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Go</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="content">
+      <h1>ACME Corporation Sales Report</h1>
+      
+      <marquee direction="left" scrollamount="3" behavior="scroll">Welcome to ACME Corporation's Q2 1995 Sales Report! Last updated on 06/30/1995</marquee>
+      
+      <div class="image-placeholder">
+        [Animated GIF: Sales Chart]
+      </div>
+      
+      <h2>Quarterly Sales Summary</h2>
+      <table>
+        <tr>
+          <th>Product Line</th>
+          <th>Q1 1995</th>
+          <th>Q2 1995</th>
+          <th>% Change</th>
+        </tr>
+        <tr>
+          <td>Computer Hardware</td>
+          <td>$1,245,678</td>
+          <td>$1,456,789</td>
+          <td>+17%</td>
+        </tr>
+        <tr>
+          <td>Software</td>
+          <td>$876,543</td>
+          <td>$1,023,456</td>
+          <td>+16.8%</td>
+        </tr>
+        <tr>
+          <td>Peripherals</td>
+          <td>$345,678</td>
+          <td>$432,109</td>
+          <td>+25%</td>
+        </tr>
+      </table>
+      
+      <h2>Regional Performance</h2>
+      <ul>
+        <li>North America: <font color="green">Excellent</font></li>
+        <li>Europe: <font color="blue">Good</font></li>
+        <li>Asia: <font color="red">Needs Improvement</font></li>
+        <li>Australia: <font color="orange">Satisfactory</font></li>
+      </ul>
+      
+      <div align="center">
+        <div class="button">Previous Page</div>
+        <div class="button">Next Page</div>
+      </div>
+    </div>
+    <div class="status-bar">
+      <div>Document Done</div>
+      <div>http://www.acme-corp.com/sales-q2-1995.html</div>
+    </div>
+  </div>
+  <div class="counter" style="margin-top: 10px;">
+    This page has been viewed <b>1,245</b> times since 06/15/1995<br>
+    <img src="/api/placeholder/88/31" alt="hit counter">
+  </div>
+
+
+ 
+    <style>
+        .btn-90s {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to bottom, #ffcc00, #ff6600);
+            border: 2px solid #ff0000;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-shadow: 2px 2px 3px black;
+            cursor: pointer;
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-90s:hover {
+            background: linear-gradient(to bottom, #ff6600, #ffcc00);
+        }
+    </style>
+
+    <button class="btn-90s"><a href="index.html">HOME</a></button>
+
+
+</body>
+</html>

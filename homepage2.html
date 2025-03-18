@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgba(228, 217, 217, 0.8);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: rgba(228, 217, 217, 0.7);
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 183, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 40px;
+            color: rgba(228, 217, 217, 0.7);
+            line-height: 1.6;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, rgb(0, 153, 255), rgb(0, 204, 255));
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(0, 183, 255, 0.7));
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .features {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: rgba(228, 217, 217, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: rgb(0, 183, 255);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .feature-card p {
+            color: rgba(228, 217, 217, 0.6);
+            line-height: 1.6;
+        }
+
+        .login-portal {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .login-portal h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: rgba(228, 217, 217, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .login-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .login-card {
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .login-card:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .login-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .login-card p {
+            color: rgba(228, 217, 217, 0.6);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .hover-circle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(0, 183, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            transition: width 0.5s, height 0.5s;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(228, 217, 217, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Animations for the floating elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: -1;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .float-1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .float-2 {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        .float-3 {
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        .float-4 {
+            width: 100px;
+            height: 100px;
+            top: 70%;
+            left: 20%;
+            animation-delay: 3s;
+        }
+
+        .float-5 {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 40%;
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">WebDesign Portal</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="feedback.html">FEEDBACK OPTIONS</a>
+<a href="index.html">Time Machine</a>
+            </div>
+        </header>
+
+        <div class="hero">
+            <div class="floating-element float-1"></div>
+            <div class="floating-element float-2"></div>
+            <div class="floating-element float-3"></div>
+            <div class="floating-element float-4"></div>
+            <div class="floating-element float-5"></div>
+            
+            <h1>Web Design Experience</h1>
+            <p>Discover the evolution of web design through interactive examples and modern interfaces. Choose different design styles, explore time periods, and enhance your web development skills.</p>
+            <div class="cta-buttons">
+                <a href="index.html" class="btn btn-primary">Enter Time Machine</a>
+                <a href="homepage.html" class="btn btn-secondary">Modern Login</a>
+            </div>
+        </div>
+
+        <section class="features" id="features">
+            <h2>Portal Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">🕰️</div>
+                    <h3>Time Machine</h3>
+                    <p>Explore web design styles from different decades, from the 1980s to modern times. See how design elements evolved over time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Design Showcase</h3>
+                    <p>Experience authentic recreations of design trends with interactive elements that demonstrate the evolution of web aesthetics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Modern Login</h3>
+                    <p>Try our modern animated login interface with dynamic elements and hover effects demonstrating contemporary design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="login-portal" id="login">
+            <h2>Choose Your Experience</h2>
+            <div class="login-cards">
+                <div class="login-card">
+                    <h3>Time Machine</h3>
+                    <p>Travel through different web design eras from the 1980s to today and see how styles have evolved.</p>
+                    <a href="index.html" class="btn btn-primary">Explore</a>
+                </div>
+                <div class="login-card">
+                    <h3>Modern Login</h3>
+                    <p>Experience our animated login interface with dynamic visual elements and modern aesthetics.</p>
+                    <a href="homepage.html" class="btn btn-secondary">Try Login</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Web Design Portal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div class="hover-circle"></div>
+
+    <script>
+        // Interactive hover effect
+        document.addEventListener('mousemove', function(e) {
+            const hoverCircle = document.querySelector('.hover-circle');
+            hoverCircle.style.left = e.clientX - 150 + 'px';
+            hoverCircle.style.top = e.clientY - 150 + 'px';
+            hoverCircle.style.width = '300px';
+            hoverCircle.style.height = '300px';
+        });
+
+        // Feature card animation
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mouseover', function() {
+                this.style.transform = 'translateY(-15px)';
+            });
+            
+            card.addEventListener('mouseout', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
